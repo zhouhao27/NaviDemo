@@ -2,6 +2,9 @@
 //  AppDelegate.swift
 //  NaviDemo
 //
+//  Reference: https://talk.objc.io/episodes/S01E05-connecting-view-controllers
+//  SideMenu: https://github.com/dekatotoro/SlideMenuControllerSwift
+//
 //  Created by Zhou Hao on 1/6/17.
 //  Copyright © 2017 Zhou Hao. All rights reserved.
 //
@@ -12,10 +15,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var rootNavigator: RootNavigator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let window = window {
+            rootNavigator = RootNavigator(window)
+        }
+        
         return true
     }
 
